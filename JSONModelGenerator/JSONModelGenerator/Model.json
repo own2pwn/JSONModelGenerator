@@ -1,0 +1,772 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "CqQCGQEAAMK8V2Hin6ObdmSOQjUaN0b_FbvUX7SlwUrB2fGAl0W_NIT72ZCR2mzlzxMWQTWYVmP_pTu1FtSQi3KH02dP-NsQnp8DZ2dy78CB_Wro0Ag6ok3DW4E4aFnJpKMPgQxPrKccpbfc_GEEHEUfsCHvQdT3kB7xs2UqeYRXmA0tSjbyDrU3BHymY0APjYrgDdrIXDPxLkYCwKKVAbETPpIzlN1CJWAEzkxT6P9R969DAg_6VyMV-z0RktsZefBARJCwebsclDXZtdw7JpsGYGXkc4mgNp3Z_hzVMvYOkaqvZC1Ec_RC86vUVccOogp4ZwnMMLJhabYEq5sAr6KAY7zc-j2yDWy1LoMRUlQEnshznMaVnl241D-cD4gNYRwwGXhibhIQRjdeR8l2kt4E2JQHC5UVgRoUp9JEJZ18iM_dUMZ-jgygullD2Js",
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.755826,
+               "lng" : 37.6172999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 56.009657,
+                  "lng" : 37.9456611
+               },
+               "southwest" : {
+                  "lat" : 55.48992699999999,
+                  "lng" : 37.3193289
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+         "id" : "1a0f08fcbc047354782f00ab52e66fb56d1aadf7",
+         "name" : "Moscow",
+         "photos" : [
+            {
+               "height" : 560,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111089167106595363652/photos\"\u003eHaitham khaled\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA2uFwkXmiy77ejsRGW8VeiMCB9dWVrN1zCpf2-D2w2r1tbdc2ArFr2EtYbh6CdLtf9Ln7cvoPufNo3oTBrBLR3t_qHh_7r5Lrz9SG_aQ-t2eqbuIBq3U8EF9y2RMDyHTXEhB5dZwMi3mgZA7pzsTne79tGhQqsoCVNStdJU3tkQ8ABfg7mzcP8Q",
+               "width" : 844
+            }
+         ],
+         "place_id" : "ChIJybDUc_xKtUYRTM9XV8zWRD0",
+         "reference" : "CmRbAAAAQygrIhz9HWwQsdrfv21q1w_CRLUvMOghKpAU4M2na4q5BwvwDEH23cxZb_qcngzaS6EBdgFXrM-iFHPIMztLnmB7w-G45oAG3kPhoicLQWON653x0JVEox1N0LcSzHqzEhCdoAr5dUDzxX1KpbiEuFsCGhR-foWtpfWZ9wHGKpUm56-FTECXow",
+         "scope" : "GOOGLE",
+         "types" : [ "locality", "political" ],
+         "vicinity" : "Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7830506,
+               "lng" : 37.6004776
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78439958029149,
+                  "lng" : 37.6018265802915
+               },
+               "southwest" : {
+                  "lat" : 55.7817016197085,
+                  "lng" : 37.5991286197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "17785e6a3c3b71cedffb382102a9d96c2c57a221",
+         "name" : "Хостел World Hostel",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1530,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116806723440186896478/photos\"\u003eХостел World Hostel\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAARXuUv6WIbV-CeCvG-UMjzmitc5Vi8cWzV8HYFeaCEoaTbyixYeiPo6DSflnkoSilxnW1MEX350YVkT5gV9frWrJuAOCAvFqDPtDYk1nPedi0Qi2_irAOwE-5Jh5Wi6VGEhD662odhcc__ZpNfDVTA4rYGhRS15qRBxFtyK3HitkQQnwe_7nRag",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJS0WfXBpKtUYRkWE9xz0m5M8",
+         "rating" : 3.9,
+         "reference" : "CmRSAAAA0DgTMUSg9H1M2schDyBCdvgvP8-1yw7EK4Fuw0ZLeN0oybFqt5DFEL2qx3M7s5KMcqk7izOWjJSGmo1o__8Qd-0xoS8-vav_B-o26_AQwmHMdlcB8yVs8Try9KWBcFBKEhBX7GIPbFUShb0kLRV1Gx-yGhRRcmJpZYteEB5irLeJvK3neAYfjw",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "vicinity" : "Suschevskaya Street 27 Bld.2, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7815916,
+               "lng" : 37.59823290000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7830145302915,
+                  "lng" : 37.5998485302915
+               },
+               "southwest" : {
+                  "lat" : 55.7803165697085,
+                  "lng" : 37.5971505697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "d30cf861b35a8fea466ecd7c32cf8a026305a3c3",
+         "name" : "Hotel Novotel Moscow Centre",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2988,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107381206762952640063/photos\"\u003ekevin mcculloch\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAMNAcHDFRYlBGGP_G9frJGk_eD5kCIfi3PRI_IOQcd3P1HIGE1vH-VdbfeYt4CkTDK0NSf2u5764uiXR54iqyYhyc9isvVlfRlitrQWEDsc7Kf7hJuQAhHvp7Dz5ukiMCEhA6uvyhBc3IbHp5Ar2Hs2HwGhQlyp8UpYvjJN6V1vwCkxnyZ5r0mQ",
+               "width" : 5312
+            }
+         ],
+         "place_id" : "ChIJY8vLmjC2SkERfIwHTm3EnBc",
+         "rating" : 4.2,
+         "reference" : "CmRRAAAAZzpEBF3S_t84GX9zHBvZ__hLpX4I-sifHhkCiCuhKE5B06MPQCYbU-Vq7q-bR-Fye-5zdM6sFzfatRCvlVB5auAZUqXtc8GCw5NYaqi8BfEkXJGb3f0mViuV-UoaWKX6EhBkTNn_xvSCwlWfh2pGawg1GhQh5h8W9w-j_SKo8MXiO1RzOm9stw",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 23, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.78192999999999,
+               "lng" : 37.599805
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78327898029148,
+                  "lng" : 37.60115398029149
+               },
+               "southwest" : {
+                  "lat" : 55.78058101970849,
+                  "lng" : 37.59845601970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "a12517949207b6ce47806beb64f1fbecf8362e21",
+         "name" : "Манго",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1195,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117821971763416177345/photos\"\u003eВебстудия Аплаб\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAquOCo5UHgKtgiRt3P8YMT5TeP26N8er5RTiKapzbUqwZdr6o2KEuio0JQS71a-0Dog8U1e3DMx2DRdGX68Np0VI2N0oB9rbU9cZ_8zNrtzibBnQQpeZErzj5TON57_MdEhCDAG4drTS_uH51R1X7QYbVGhSC8UIQ9eH5XOCLKFkKbIEMwB3R1w",
+               "width" : 1900
+            }
+         ],
+         "place_id" : "ChIJHetOGBpKtUYRsaRaaooIFWU",
+         "rating" : 4.2,
+         "reference" : "CmRRAAAAAOR6uoc7zuDKb45S0A3g1DXlBF59XFXE2E-BLJFGJljLH8fuGuWilghqlKLazbI-QC6XQAyEnPepifMeNPo8X4BhdLcJPkFwfzsBZ9x8sOoUgCuiy1Pu7ub44tZlYYIEEhAwY_bneWQt6g48UPNo2ps2GhTVYHvY_uElcSiiDca0ntHMe6qxDA",
+         "scope" : "GOOGLE",
+         "types" : [ "gym", "beauty_salon", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 19, стр. 4, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7823876,
+               "lng" : 37.60067859999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78375313029149,
+                  "lng" : 37.60252768029149
+               },
+               "southwest" : {
+                  "lat" : 55.78105516970849,
+                  "lng" : 37.5998297197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "4b81b3ea6cb12db4777a5eb20a2800a3e73525ef",
+         "name" : "Miksgrupp",
+         "place_id" : "ChIJsyKjbRpKtUYRQqMh_eSGtd4",
+         "reference" : "CmRSAAAAIOp_jpvGNjBvGi5fj4s7tZMZxJSeafhWtOurzj6DR_kxG7jgQSb5IAkVDy7ihrELsb0JPIxyxl69NmGg6ZMC7-MtcHQc1mHVWLCgeM5upjwS5XJ_eGAwP3SAttEfixpAEhDti8XFuOgIgiG1jIBpEcgnGhQBbo2vqpe2BJG_Jy8iCrQ1ryrCvw",
+         "scope" : "GOOGLE",
+         "types" : [ "general_contractor", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 21 строение 10, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.78253309999999,
+               "lng" : 37.59863900000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7838820802915,
+                  "lng" : 37.5999879802915
+               },
+               "southwest" : {
+                  "lat" : 55.7811841197085,
+                  "lng" : 37.5972900197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "74867c9f2db1ef92422ed0ff620cfd29891a32e0",
+         "name" : "Yakitoriya",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2952,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115553696446511920010/photos\"\u003eСергей Виноградов\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAbdxsA3xBbOiVHeirbxnB085hDZmFKiMxk4qBnDXaOfXYZlxVI-tFQcTIebLNHxZVWO_z94KQihWg5kKj0X5rnHHn8NIjiVXUCOVBZY3VNJOmJzjvjqVl3GpIn0h8CSbcEhC9nfjnyxWLUYBfgLcQp3BzGhQiyJC0bYDgD0fRdHbsEaw0_Ez81g",
+               "width" : 5248
+            }
+         ],
+         "place_id" : "ChIJ_WHxORpKtUYRfF210nq-0pM",
+         "rating" : 4.1,
+         "reference" : "CmRSAAAAvUPikqgy_uADFLg8OLGDxjtae_yI7_ZVZOzwGBzRsgNNQMq9PfnylmopxsCtTZfdRn-fUgX3z_xstz19sb9bp58mV5ZRU8stRDf932nnMyObbG7XkL96Mafwiq43gs9dEhC778qJdokPEYF7mo2tYdp5GhRVYv4M58dO2y-gLJutt6bkhCAgTA",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 20, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.782825,
+               "lng" : 37.60028
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7842188802915,
+                  "lng" : 37.60229383029149
+               },
+               "southwest" : {
+                  "lat" : 55.7815209197085,
+                  "lng" : 37.59959586970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "e813289f29914386a15198df2d22474aa70149a3",
+         "name" : "ITM_club",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 420,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100320861262532457880/photos\"\u003eITM_club\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAg-vQUK3qxF_9eG4dYxl5NDqjMAP0Vnc8APp9a7V-NX1-TDCAGK43BnIXMIu8Hj0gV2xbYjrZ3cQcBjoey8pg9m9up-BAo2xeWnM8wh39zxX4PrkBzXPhIT9NF2b_TVwjEhDuBs1e5k_7lQWj4vb3vkWIGhSlAIyjrGawHsyFxCQ4gAIPwMfBJg",
+               "width" : 740
+            }
+         ],
+         "place_id" : "ChIJk4cVHuxKtUYRc6Hi2t_WCwY",
+         "reference" : "CmRRAAAA5Ml79aJk31Ur40GoHFCG4Bo3EWHfJxtpaABdLOBaVQH_Qtj9miRIEBQ5bIpjaFpOL2ywoxKMjCcbSR2sz-zrkd5TN2NbRgd8HWd16R-b2MozoQVaKXzGp94igU0NIJsdEhBnFZWi_ec4UXK_5f3-XyIlGhRT1uHX7lCeb2T7fqUx0UpQtL45Nw",
+         "scope" : "GOOGLE",
+         "types" : [ "travel_agency", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 25 строение 1, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7818047,
+               "lng" : 37.6005152
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7831536802915,
+                  "lng" : 37.6018641802915
+               },
+               "southwest" : {
+                  "lat" : 55.7804557197085,
+                  "lng" : 37.5991662197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "a177ab625bba3d3137e2cd15071a7fac9a7dd0c6",
+         "name" : "ПРОСТОЦВЕТЫ",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3968,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112722963558243722234/photos\"\u003eOleg D\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA8vItX3VLdKiaJxvTEAnCxBCerYPf6G3Dm1dkL0VwCd0w0SfUwbaJ6r5fpkUWTpjeG1PIpEx7ovm7bDWNmKiVgLK03T3wmcEclaiMtyL_QZc-u2GcIQkIiAQv84btjJWVEhBCiv1PShnAuthzBMhAFGLHGhQMCPan0SS7vpIznml71-gFJws8DA",
+               "width" : 2240
+            }
+         ],
+         "place_id" : "ChIJif4tcxpKtUYRlQQK73tMOrU",
+         "rating" : 1,
+         "reference" : "CmRSAAAA2eR9-_8InmoPAXx5Act89EBh6QoND6PcIBkxbdtX2A6IlQRG3NdDEselxY4J3N3Fx1er9md5Va8FWLHhDDVmonJQf3hijrNI8-r-mwelJcU6RBAkLkJ3akgvXoFcNTcxEhChZkgjwTmEMJiJNudZDtQ9GhQUUwvH6ud2RPaJb96514SsxNY3Xw",
+         "scope" : "GOOGLE",
+         "types" : [ "florist", "store", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 19 строение 4, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7816081,
+               "lng" : 37.5985063
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7829981302915,
+                  "lng" : 37.60000683029151
+               },
+               "southwest" : {
+                  "lat" : 55.7803001697085,
+                  "lng" : 37.59730886970851
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "406fe325152e2cea525841ede9d62393094aca87",
+         "name" : "Мегафон",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109352555331525577345/photos\"\u003eАлександр Альбов\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAxwCpAS2NfYHS_cak1P9Rn-y1XpbU6JcsKPspLyTA8rLkQU4sywIKWa22GKSHHBF_vcwOZ2c8V8Nbs7sTCr3NrTiBkztnYNhDEBvitND3x13A9r-s2Tf_P9twelM6ihcfEhDyo22-JkDu7sndan_inolSGhRRaFpzgcneMAkj5ZlQd7YQO4kk9g",
+               "width" : 1836
+            }
+         ],
+         "place_id" : "ChIJ3XQFIBpKtUYRbGfS4CisbCo",
+         "rating" : 4.1,
+         "reference" : "CmRRAAAANPS8OE3ZPOzTj7wjfJA0oasjIfibEICnPVpstIE61qABxUcbsEzek55yKmyS4Cwz0QAcn9NedTkq6rpXq7xd4s7VsI7xkotlVAIHbxDD6Ny5q9yTDEKual7tWMoUTH1nEhBtXNNrmRiHqwQI04NUnIk1GhSpQAij4QTGZA3EYZ8qOzIgsgvjYg",
+         "scope" : "GOOGLE",
+         "types" : [ "store", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 23, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7815077,
+               "lng" : 37.601091
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7828605802915,
+                  "lng" : 37.6027886302915
+               },
+               "southwest" : {
+                  "lat" : 55.7801626197085,
+                  "lng" : 37.6000906697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "633ead0883671723e89cbf8c5de45868a078ae8d",
+         "name" : "On Sushchevskaya Apartment",
+         "place_id" : "ChIJRwwkCRpKtUYR8IjVs2JSSiU",
+         "reference" : "CmRRAAAAPCCuMpVgn9ibH0mUVsfAOueaVQIoS-qdI_-E1uCWhb6TxN_lfvb4fY9iouRB76dJAXfOvHARZ91PVAFYvDlwobcHaE0cJmD7FuXTgwxNuq2hJNkuYqpgBq32ynUa4jgtEhCF03i7ulh4SIHho6Q2DtzgGhShmn-6vRkyN8mNYYRQNEF4_XPeaw",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 13/15, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7821533,
+               "lng" : 37.5996298
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7833781302915,
+                  "lng" : 37.6005426802915
+               },
+               "southwest" : {
+                  "lat" : 55.7806801697085,
+                  "lng" : 37.5978447197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "fab2ce959c1508b57352eec6dae639dbe93a9e7a",
+         "name" : "One Door Community",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2168,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105879654086797416179/photos\"\u003eDmitry Bushev\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAArINvMR0Ivt-mhw0IMikrdOP-n7VPTWEy4e8N6QOKIVg19oB7afH-XKaT6gbZ8L_3B4_RuzUs1_enfub6m_JQjf_1G1vKwrW-Eo1rHxevFsyPC-oKYtt6eHixIKM1ZnVFEhDOU-tjAEvMk94S_bDF582tGhR0qPB1ntcRV6_rXdVtd1D1qmbGTg",
+               "width" : 3824
+            }
+         ],
+         "place_id" : "ChIJxVYpbBpKtUYRdeLMMyW45Kk",
+         "price_level" : 2,
+         "rating" : 4.6,
+         "reference" : "CmRSAAAAVZgBVJYxQjQYSJQ77foGGEOmZHuyAUikwj2VVihGkHUH6T8goIkQFBXfU0ewmqsevfVp2pxl19X1jx2TlJYoBmIFJ3t9LjOPSSur4OY3zTtT_zhRI60GGtDO3pwGMjbOEhDjkqmCnq-jvSLu7xyg0Rt7GhTUa0CIiFtpXq_A23fbeShxMxA3_g",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 16A, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.78243879999999,
+               "lng" : 37.60144939999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7837915302915,
+                  "lng" : 37.6029117302915
+               },
+               "southwest" : {
+                  "lat" : 55.7810935697085,
+                  "lng" : 37.6002137697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "c6a8634afda3ce55f82fefdb80d02fa80544a4a5",
+         "name" : "Kamerton, Turisticheskoye Agentstvo",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJxVYpbBpKtUYRIg1NBX6VnzE",
+         "rating" : 5,
+         "reference" : "CmRRAAAAwRIh5OED7FhiiTVDibZjFRs9zcZoPUMJexJPcQL1ULxcwqyLTXTR74KsKFgy_tvdo4goUIifVWqfXxB2gWunF4aUL97_0ORLppNE9dOxgkRLagSgp1KCMV2Pl_1DeJxYEhAwuCIi1Xwi66fHfFAx60TEGhRJ4QdVx7gGVKe7QjkmAGKObQTapw",
+         "scope" : "GOOGLE",
+         "types" : [ "travel_agency", "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 19, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.782442,
+               "lng" : 37.6012599
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7837978302915,
+                  "lng" : 37.60281648029149
+               },
+               "southwest" : {
+                  "lat" : 55.78109986970851,
+                  "lng" : 37.6001185197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
+         "id" : "fbc0609e4d0e6cf82aaf5dd28f5c4db1d4dbd16f",
+         "name" : "Marte",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 525,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114821938113458023010/photos\"\u003eМартэ\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAWvjgI1cR-hjB27jwshgSVplZZTX4f5MAao9jcNHmg5Zm30gbkkyVFGQkJKgSbAMEiUi4O-uSNVwmYaFVGKuXaLSFoPaBl2_FvW4cqbbXOWXDaHnlrYV-Od5i72HoO3KxEhCuieNmGN8zV0uWziyUMuBLGhTXgd0cwlNE3sdODVUzIMd6LJo3uA",
+               "width" : 700
+            }
+         ],
+         "place_id" : "ChIJsyKjbRpKtUYRq56LPuCFUKE",
+         "rating" : 5,
+         "reference" : "CmRSAAAAujJ89G-v7qUiAjS3elBpx-Cf4HzlIr-Z5GVHsGijIsA87c49JMA-8H5TF-wYWX9_ZY0KgL-7HkSKEB2JxTCK-I4h0VLLiIulavs0Qk4ugVm6mdr-fYlkV09MgwesTqYQEhDLiI-ZmhtpznxgYfgm4jMqGhQxW28fP5QFUsqwWMqp483Il3IbMQ",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 21, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.780043,
+               "lng" : 37.601248
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78129413029151,
+                  "lng" : 37.6022239302915
+               },
+               "southwest" : {
+                  "lat" : 55.77859616970851,
+                  "lng" : 37.5995259697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "8e9bc3c7424178a99bde74f7b94a20948e0b7453",
+         "name" : "O'STIN",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2240,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112722963558243722234/photos\"\u003eOleg D\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAc7F9dJQHwDIcvQ4ndOTo7DJ0scriI6WigBK-4tepaNfQwbwLA7DfG6d8cJ9sdL3qaXZqN_6Qpo6cvXDPK4lmTypj5XIhJInlbLHE4PhvmUrWzXHjRI8a0_Zk17ib3SwkEhA15yrIpVkVqrUWRK-rcLCBGhQGkRqt7a9XORyenANj0WttEY3gdA",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJQc30TBdKtUYRuqLGOPu1jAE",
+         "rating" : 4,
+         "reference" : "CmRRAAAAQbqjT9F0a4Mw3VdWgAg_TvKk_GWb5wfLQnu5U82BQRsS8fy-8P33xgtTzlQl2WojK9HT2ExMQ2R-ItU3ac4HfqLP2E8ba1DQgM-3N7bz7DzY5tLm5x1-4BkEHcbgTZ5BEhBfjKoopxyPIBcLL09iO1bAGhQpc8Otb5XCY4-l_13Xr68q-ZVVXA",
+         "scope" : "GOOGLE",
+         "types" : [ "clothing_store", "store", "point_of_interest", "establishment" ],
+         "vicinity" : "ТД Дружба, Novoslobodskaya Ulitsa, 4, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.78225519999999,
+               "lng" : 37.6004483
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78337808029149,
+                  "lng" : 37.60124805
+               },
+               "southwest" : {
+                  "lat" : 55.78068011970849,
+                  "lng" : 37.59804904999999
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
+         "id" : "786c19085557f26a2f9c7d44a56ccf7e19057e40",
+         "name" : "Central Driving School",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJxVYpbBpKtUYRaFfxYqORvzA",
+         "reference" : "CmRRAAAA0yhHjvRdNDzAyOdEzdYmtyHNuelRz8s_aacYvRkP3EBd3r6tWBpyy4D2ZmCe844ew23XOHYcSCx6afF921vbvTe09Tg5XkrMyjEv8zKH5HpYPfCUD0asRuBX7ZHMRx0eEhCY8yRJDaRcuJZ7c20jPWb_GhQ-7f1tjciLOqX6tQtOZjlnI_zVAw",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 26 строение 1, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7813005,
+               "lng" : 37.6003808
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7826494802915,
+                  "lng" : 37.6017297802915
+               },
+               "southwest" : {
+                  "lat" : 55.7799515197085,
+                  "lng" : 37.5990318197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "7b1d4d21957f3ceaad06cc6c00f3219665b73dbe",
+         "name" : "Kal'yan",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3456,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108193050062312155932/photos\"\u003eВсеволод Песец\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAFg8G9Gs5ci631pSTHeb_gyIjaIWNQn9KP24DiznAgsoOLCtvDjID29toUM-3-g1rfjomBPzvbODB_PYqsPNHpJQASaP5DLT1h921mMpqdPJDmEo8BiMqzNB0usXaoyCqEhDwb85y60H_vnwOaHMLIm-7GhRogE3dSkQA6WZGGTLUSjVjUnf3Rw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJMydJBBpKtUYRURvt6V-qbOw",
+         "rating" : 4.3,
+         "reference" : "CmRSAAAAV81rR69k8oX93l3vj70MErkQ2utIvaYfNYfJp0fwYYRN0oo95dL3ZFKLeUm_QLh28MaUpfle0Bft9ROISl1mZtGyfrX-0Wz8g_lAVaaFXY-6p1osPELes4mKlljGweioEhB_pvY4kUJm7XU5jb8fcMPlGhRXF5gQ8-S7sY6FhgX_o7t7z7e4gA",
+         "scope" : "GOOGLE",
+         "types" : [ "cafe", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 14/19, стр. 8, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.782585,
+               "lng" : 37.599391
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.78399633029149,
+                  "lng" : 37.6027735
+               },
+               "southwest" : {
+                  "lat" : 55.7812983697085,
+                  "lng" : 37.59826349999999
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "7867ed6ecb00f076994cb6d660141627440ab653",
+         "name" : "\"Volshebnaya Lampa\" Moskovskiy Teatr Detskoy Knigi",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1152,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104466087653927144361/photos\"\u003eIRMINA G\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA_GpVSEJ0ZcE-pDd131YFaufBAtWkw9u_8OrggoV-AphG0vaexXl16URrGYNCJR261F1WGE3dVSo-mvQb9AkWBEs5MgQmgiH-AWmpHfEBkiJD48RxGumlkcuTIRMzQKjmEhBGZpX6ZYAVnzzGQ4w7dyvhGhS01O5D8gU-BeqS3F_yGzzQcx1zLg",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJL3WLRGZKtUYRH-XxGuW0c3Y",
+         "rating" : 4.9,
+         "reference" : "CmRRAAAANMpTzApCFwTFlFJV0-7p20DBhexEEc7RBRKeTlnnk3CJZG7iegdqaqLHyFJara8bnl1ldohRnm2Bqrez81qIFgHjnoz8w0o3JtEHx_s50cNfyegQ-g6joUyBoQxE-BdWEhAsUiqAzQlWTNeOtG5XLODXGhT19MXks8oLVSilwjIhfwnUkeEfXA",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "vicinity" : "Sushchevskaya Ulitsa, 25, стр. 5, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.781021,
+               "lng" : 37.5996541
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7823530302915,
+                  "lng" : 37.6009404802915
+               },
+               "southwest" : {
+                  "lat" : 55.7796550697085,
+                  "lng" : 37.5982425197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "62432d0b180e06fae5d9646d238e6d0ab29efbce",
+         "name" : "Notary Ulyana Novopashin",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117759535994646548854/photos\"\u003eВладимир Баландин\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA_n9X9Lg88QLnApQMafWnhKr6eQz0C5cSlBesBwM7yfZ0ProTDnPkkPmZ1e76JlLjyAzEqmO6ryENiVojt3G_gFJsqZtj6d5h7UWyn1CMjGL2eJXaMVwfPvls8fmCtxnnEhAsPNCNnZ8EkwsESdYjiX8wGhRxUcxHdBJE4Scm8_0WaQMW1FS6Sg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXdS1AxpKtUYRv1EFAWqg4Mg",
+         "rating" : 4.1,
+         "reference" : "CmRSAAAA5U2f48UcZPsmIugwgEieMKIBpEBcggcuqQzVYq7TPKXgDlaMmtSpPGQQAtcuOFq3um1sGUGJsR6d1P3Lz-JR4zv79C-Ex-2oIo6z6Rz8WwwJpA3fnGZ2a3UyASCxOprwEhBY85n97vL_urFV-fRzo7fuGhRMRyejrvRTdFZzszNTHe3WQoPy2Q",
+         "scope" : "GOOGLE",
+         "types" : [ "finance", "point_of_interest", "establishment" ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 14к19с1, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.780711,
+               "lng" : 37.599946
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.7820398302915,
+                  "lng" : 37.6012254302915
+               },
+               "southwest" : {
+                  "lat" : 55.7793418697085,
+                  "lng" : 37.5985274697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "9cab931adfe3e12af8a21841cf3e384224f95047",
+         "name" : "Эконика",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 960,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112722963558243722234/photos\"\u003eOleg D\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAF1jG7H173ag76khP9RZFOMSI6hLp-iD8QgCXy2Ef_3GCGDxCtVZNmIMdVty0btmgW6BdJpnajvWo43iEOf1B65CA7wOsR7uqTn6EyLa8PjYXGgPo-kc0CMci57AwzQ-JEhDoBwOJOrk29CfC8L-LQNHOGhQV_AF3wPZzJVjnNlzvmpLXvlCIzw",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJe9cJ_xlKtUYRHnHm9hEgYd0",
+         "rating" : 4.5,
+         "reference" : "CmRSAAAAvhVHu1JtlShDFDvWedFSaAVY7i6snRAT9WsvFE6fS9yiEuJsar6_PzbG38KmrBFD7MgKBdrCKnaNF-uZBSN9U0UcBQs4xlFcwCpPPWUEGcf34Nv5Cmr1CtMAF3yVrjnYEhC2BTRg8NlOrGkXGzd0lDxhGhQCUdmhnb19PMDKAVO04kHxHEzFLw",
+         "scope" : "GOOGLE",
+         "types" : [
+            "shoe_store",
+            "clothing_store",
+            "store",
+            "point_of_interest",
+            "establishment"
+         ],
+         "vicinity" : "Novoslobodskaya Ulitsa, 12с1, Moscow"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 55.7567884,
+               "lng" : 37.6126646
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 55.79718,
+                  "lng" : 37.7129819
+               },
+               "southwest" : {
+                  "lat" : 55.710521,
+                  "lng" : 37.514144
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+         "id" : "ccbb2d3378a42cbc5781889d4eb8192332a6ce61",
+         "name" : "Central Administrative Okrug",
+         "photos" : [
+            {
+               "height" : 805,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104412442900429362571/photos\"\u003eДенис Дружинина\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAVlh8VFjaGHcBCBMgacUrA7nS70wtfKW5Xl4aYh_WFwmuNZ27jlTCTuY5AZUUUJvuWL0MRyKIN9pwYCGGZC-qvlU_qsxkE1zAuNRyPyC519rPpq5SKUZ61UcaFy6-sCtcEhBfvzZ214pzMvPyodDMyHSiGhQVJJ4dmsX4mAe7NjYK5k0Wrz8CmQ",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJz08vV1BKtUYR2D1lCclQxZM",
+         "reference" : "CmRbAAAA26CjcoW7Ar_Z01xUcqXiWNRV423g1hqDcQGbikRIoZZ4nN4gXZdroDNvMOPVzQRcgiARVFc2aU32m31Q-xCbek2czbJMoIcmjmfSuzUIFsdqMSkNIWzoWs9_3G1-txhPEhD8aFjRX0UwdAkjeSWo5WhuGhSJyub9mTHCRaJPk6S5neKN8i1qyQ",
+         "scope" : "GOOGLE",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ],
+         "vicinity" : "Central Administrative Okrug"
+      }
+   ],
+   "status" : "OK"
+}
