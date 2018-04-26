@@ -11,7 +11,141 @@ import Cocoa
 public typealias JSONObject = [String: Any]
 
 public enum ElementType {
-    case string(String)
+    case string
+
+    indirect case array(type: ElementType)
+    case object(elements: [Property])
+
+    case int
+    case double
+
+    case any
+    case null
+}
+
+extension ElementType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .string: return "String"
+        case .any: return "Any"
+        case .null: return "Any?"
+        case .array(type: let type):
+            return "[\(type.description)]"
+
+        case .int:
+            return "Int"
+
+        case .object(let elements):
+            return makeModel("idk", elements)
+
+        default:
+            return "Not yet![3]"
+        }
+    }
+
+    private func makeModel(_ name: String, _ properties: [Property]) -> String {
+        let spacing = String(repeating: Character.space, count: 4)
+
+        let header = "struct \(name) {\n"
+
+        let content = properties
+            .map { "\(spacing)let \($0.name): \($0.type)" }
+            .joined(separator: "\n")
+
+        let footer = "\n}"
+
+        return header + content + footer
+    }
+}
+
+public extension Character {
+    public static var space: Character {
+        return " "
+    }
+}
+
+public extension String {
+    public static var space: String {
+        return " "
+    }
+}
+
+public struct Property {
+    let name: String
+    let type: ElementType
+}
+
+public final class WorkerBox {
+
+    // MARK: - Interface
+
+    public func parse(_ object: JSONObject) -> [Property] {
+        var properties: [Property] = []
+
+        for key in object.keys {
+            let element = object[key]!
+
+            if key == "types" {
+                log.debug("gotcha")
+            }
+
+            let property = parse(element: element, name: key)
+            properties.append(property)
+        }
+        log.debug(properties)
+
+        return properties
+    }
+
+    // MARK: - Internal
+
+    private func parse(element: Any, name: String) -> Property {
+        if element is String {
+            return makeString(for: name)
+        }
+
+        if element is [Any] {
+            return makeArray(element as! [Any], for: name)
+        }
+
+        if element is Int {
+            return makeInt(for: name)
+        }
+
+        return Property(name: name, type: .null)
+    }
+
+    private func makeInt(for name: String) -> Property {
+        return Property(name: name, type: .int)
+    }
+
+    private func makeArray(_ array: [Any], for name: String) -> Property {
+        guard !array.isEmpty else { return makeEmptyArray(for: name) }
+        let element = array[0]
+
+        if name == "photos" {
+            log.debug("gotcha!")
+        }
+
+        if element is JSONObject {
+            let parsed = parse(element as! JSONObject)
+
+            return Property(name: name, type: .object(elements: parsed))
+        }
+        if element is String {
+            return Property(name: name, type: .array(type: .string))
+        }
+
+        return parse(element: element, name: name)
+    }
+
+    private func makeEmptyArray(for name: String) -> Property {
+        return Property(name: name, type: .array(type: .any))
+    }
+
+    private func makeString(for name: String) -> Property {
+        return Property(name: name, type: .string)
+    }
 }
 
 public final class WorkerNew {
@@ -19,6 +153,12 @@ public final class WorkerNew {
     // MARK: - Interface
 
     public func parse(_ object: JSONObject) -> [String] {
+        let w = WorkerBox()
+        let v = w.parse(object)
+        log.debug(v)
+
+        return [""]
+
         var properties: [String] = []
 
         for key in object.keys {
