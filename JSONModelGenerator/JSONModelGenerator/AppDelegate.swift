@@ -10,8 +10,12 @@ import Cocoa
 
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationWillFinishLaunching(_ notification: Notification) {
+    override init() {
+        super.init()
         Logger.setupLogging()
+    }
+
+    func applicationWillFinishLaunching(_ notification: Notification) {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
