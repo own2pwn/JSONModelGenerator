@@ -35,26 +35,24 @@ extension ElementType: CustomStringConvertible {
         case .int:
             return "Int"
 
+        case .double:
+            return "Double"
+
         case .object(let elements):
-            return makeModel("idk", elements)
+            return makeModel(of: elements)
 
         default:
             return "Not yet![3]"
         }
     }
 
-    private func makeModel(_ name: String, _ properties: [Property]) -> String {
+    private func makeModel(of elements: [Property]) -> String {
         let spacing = String(repeating: Character.space, count: 4)
-
-        let header = "struct \(name) {\n"
-
-        let content = properties
+        let content = elements
             .map { "\(spacing)let \($0.name): \($0.type)" }
             .joined(separator: "\n")
 
-        let footer = "\n}"
-
-        return header + content + footer
+        return content
     }
 }
 
@@ -85,14 +83,9 @@ public final class WorkerBox {
         for key in object.keys {
             let element = object[key]!
 
-            if key == "types" {
-                log.debug("gotcha")
-            }
-
             let property = parse(element: element, name: key)
             properties.append(property)
         }
-        log.debug(properties)
 
         return properties
     }
@@ -104,6 +97,12 @@ public final class WorkerBox {
             return makeString(for: name)
         }
 
+        if element is JSONObject {
+            let parsed = parse(element as! JSONObject)
+
+            return Property(name: name, type: .object(elements: parsed))
+        }
+
         if element is [Any] {
             return makeArray(element as! [Any], for: name)
         }
@@ -112,7 +111,15 @@ public final class WorkerBox {
             return makeInt(for: name)
         }
 
+        if element is Double {
+            return makeDouble(for: name)
+        }
+
         return Property(name: name, type: .null)
+    }
+
+    private func makeDouble(for name: String) -> Property {
+        return Property(name: name, type: .double)
     }
 
     private func makeInt(for name: String) -> Property {
@@ -122,10 +129,6 @@ public final class WorkerBox {
     private func makeArray(_ array: [Any], for name: String) -> Property {
         guard !array.isEmpty else { return makeEmptyArray(for: name) }
         let element = array[0]
-
-        if name == "photos" {
-            log.debug("gotcha!")
-        }
 
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
@@ -155,7 +158,9 @@ public final class WorkerNew {
     public func parse(_ object: JSONObject) -> [String] {
         let w = WorkerBox()
         let v = w.parse(object)
-        log.debug(v)
+        if let f = v.first(where: { $0.name == "results" }) {
+            let properties = f.type
+        }
 
         return [""]
 
