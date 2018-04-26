@@ -60,7 +60,7 @@ extension ElementType: CustomStringConvertible {
 
     private func makeModel(_ name: String, of elements: [ElementType]) -> String {
         let spacing = String(repeating: Character.space, count: 4)
-        let header = "struct \(name.capitalized)Model {\n"
+        let header = "struct \(name.capitalized) {\n"
 
         let content = elements
             .map { spacing + $0.description }
@@ -101,6 +101,12 @@ public struct Property {
 public final class WorkerBox {
 
     // MARK: - Interface
+
+    public func generate(for object: JSONObject) -> String {
+        let parsed = parse(object)
+
+        return "kek"
+    }
 
     public func parse(_ object: JSONObject) -> [ElementType] {
         var properties: [ElementType] = []
@@ -182,7 +188,7 @@ public final class WorkerNew {
 
     public func parse(_ object: JSONObject) -> [String] {
         let w = WorkerBox()
-        let v = w.parse(object)
+        let v = w.generate(for: object)
         let k = v.description
 
         return [""]
@@ -319,4 +325,47 @@ final class ViewController: NSViewController {
         let worker = Worker()
         worker.parse()
     }
+}
+
+struct SearchModel {
+    let status: String
+    struct ResultsModel {
+        struct GeometryModel {
+            struct ViewportModel {
+                struct NortheastModel {
+                    let lat: Double
+                    let lng: Double
+                }
+
+                struct SouthwestModel {
+                    let lat: Double
+                    let lng: Double
+                }
+            }
+
+            struct LocationModel {
+                let lat: Double
+                let lng: Double
+            }
+        }
+
+        let reference: String
+        let icon: String
+        let name: String
+        let id: String
+        let place_id: String
+        struct PhotosModel {
+            let photo_reference: String
+            let height: Int
+            let html_attributions: [String]
+            let width: Int
+        }
+
+        let scope: String
+        let vicinity: String
+        let types: [String]
+    }
+
+    let html_attributions: [Any]
+    let next_page_token: String
 }
