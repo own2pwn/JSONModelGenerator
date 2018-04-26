@@ -11,39 +11,64 @@ import Cocoa
 public typealias JSONObject = [String: Any]
 
 public enum ElementType {
-    case string
+    case string(name: String)
+    case stringType
 
-    indirect case array(type: ElementType)
-    case object(elements: [Property])
+    case int(name: String)
+    case double(name: String)
 
-    case int
-    case double
+    case any(name: String)
+    case null(name: String)
 
-    case any
-    case null
+    indirect
+    case array(name: String, elements: ElementType)
+    case object(name: String, elements: [ElementType])
+    case arrayType(name: String)
 }
 
 extension ElementType: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .string: return "String"
-        case .any: return "Any"
-        case .null: return "Any?"
-        case .array(type: let type):
-            return "[\(type.description)]"
+        case .string(let name):
+            return "let \(name): String"
 
-        case .int:
-            return "Int"
+        case .arrayType(let name):
+            return "let \(name): [Any]"
 
-        case .double:
-            return "Double"
+        case .array(let name, let type):
+            return "let \(name): [\(type)]"
 
-        case .object(let elements):
-            return makeModel(of: elements)
+        case .int(let name):
+            return "let \(name): Int"
 
-        default:
-            return "Not yet![3]"
+        case .double(let name):
+            return "let \(name): Double"
+
+        case .object(let name, let elements):
+            return makeModel(name, of: elements)
+
+        case .any(let name):
+            return "let \(name): Any"
+
+        case .null(let name):
+            return "let \(name): Any?"
+
+        case .stringType:
+            return "String"
         }
+    }
+
+    private func makeModel(_ name: String, of elements: [ElementType]) -> String {
+        let spacing = String(repeating: Character.space, count: 4)
+        let header = "struct \(name.capitalized)Model {\n"
+
+        let content = elements
+            .map { spacing + $0.description }
+            .joined(separator: "\n")
+
+        let footer = "\n}"
+
+        return header + content + footer
     }
 
     private func makeModel(of elements: [Property]) -> String {
@@ -77,8 +102,8 @@ public final class WorkerBox {
 
     // MARK: - Interface
 
-    public func parse(_ object: JSONObject) -> [Property] {
-        var properties: [Property] = []
+    public func parse(_ object: JSONObject) -> [ElementType] {
+        var properties: [ElementType] = []
 
         for key in object.keys {
             let element = object[key]!
@@ -92,7 +117,7 @@ public final class WorkerBox {
 
     // MARK: - Internal
 
-    private func parse(element: Any, name: String) -> Property {
+    private func parse(element: Any, name: String) -> ElementType {
         if element is String {
             return makeString(for: name)
         }
@@ -100,7 +125,7 @@ public final class WorkerBox {
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
 
-            return Property(name: name, type: .object(elements: parsed))
+            return .object(name: name, elements: parsed)
         }
 
         if element is [Any] {
@@ -115,39 +140,39 @@ public final class WorkerBox {
             return makeDouble(for: name)
         }
 
-        return Property(name: name, type: .null)
+        return .null(name: name)
     }
 
-    private func makeDouble(for name: String) -> Property {
-        return Property(name: name, type: .double)
+    private func makeDouble(for name: String) -> ElementType {
+        return .double(name: name)
     }
 
-    private func makeInt(for name: String) -> Property {
-        return Property(name: name, type: .int)
+    private func makeInt(for name: String) -> ElementType {
+        return .int(name: name)
     }
 
-    private func makeArray(_ array: [Any], for name: String) -> Property {
+    private func makeArray(_ array: [Any], for name: String) -> ElementType {
         guard !array.isEmpty else { return makeEmptyArray(for: name) }
         let element = array[0]
 
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
 
-            return Property(name: name, type: .object(elements: parsed))
+            return .object(name: name, elements: parsed)
         }
         if element is String {
-            return Property(name: name, type: .array(type: .string))
+            return .array(name: name, elements: .stringType)
         }
 
         return parse(element: element, name: name)
     }
 
-    private func makeEmptyArray(for name: String) -> Property {
-        return Property(name: name, type: .array(type: .any))
+    private func makeEmptyArray(for name: String) -> ElementType {
+        return .arrayType(name: name)
     }
 
-    private func makeString(for name: String) -> Property {
-        return Property(name: name, type: .string)
+    private func makeString(for name: String) -> ElementType {
+        return .string(name: name)
     }
 }
 
@@ -158,9 +183,7 @@ public final class WorkerNew {
     public func parse(_ object: JSONObject) -> [String] {
         let w = WorkerBox()
         let v = w.parse(object)
-        if let f = v.first(where: { $0.name == "results" }) {
-            let properties = f.type
-        }
+        let k = v.description
 
         return [""]
 
