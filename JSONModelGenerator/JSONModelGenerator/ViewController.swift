@@ -60,7 +60,7 @@ extension ElementType: CustomStringConvertible {
 
     private func makeModel(_ name: String, of elements: [ElementType]) -> String {
         let spacing = String(repeating: Character.space, count: 4)
-        let header = "struct \(name.capitalized) {\n"
+        let header = "struct \(name.capitalized)Model {\n"
 
         let content = elements
             .map { spacing + $0.description }
@@ -98,6 +98,11 @@ public struct Property {
     let type: ElementType
 }
 
+public struct ModelType {
+    let name: String
+    let properties: [ElementType]
+}
+
 public final class WorkerBox {
 
     // MARK: - Interface
@@ -105,7 +110,23 @@ public final class WorkerBox {
     public func generate(for object: JSONObject) -> String {
         let parsed = parse(object)
 
-        return "kek"
+        var prettyPrinted = ""
+        var models: [ModelType] = []
+
+        for property in parsed {
+            switch property {
+            case .object(let name, let elements):
+                models.append(ModelType(name: name, properties: elements))
+                prettyPrinted += "let \(name): \(name.capitalized)Model\n"
+            default:
+                prettyPrinted += property.description + "\n"
+            }
+        }
+
+        return prettyPrinted
+    }
+
+    private func traverse(object: ElementType) {
     }
 
     public func parse(_ object: JSONObject) -> [ElementType] {
