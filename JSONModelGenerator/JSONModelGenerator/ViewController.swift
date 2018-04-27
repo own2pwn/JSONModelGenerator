@@ -121,7 +121,7 @@ extension ElementType: CustomStringConvertible {
             return prettyPrint(name: name, for: self)
 
         case .array(let name, _):
-            return prettyPrint(name: name, for: self)
+            return "WHAT THE FUCK MAN" //prettyPrint(name: name, for: self)
 
         case .object(let name, let elements):
             return makeModel(name, of: elements)
@@ -200,13 +200,13 @@ public final class WorkerBox {
         let parsed = parse(object)
 
         var prettyPrinted = ""
-        var models: [ModelType] = []
+        var models: [String: [ModelType]] = [:]
 
         for property in parsed {
             switch property {
-            case .object(let name, let elements):
+            case .array(let name, let elements):
                 // models.append(ModelType(name: name, properties: elements))
-                models += prettyPrintObject(elements: elements, name: name)
+                models[name] = prettyPrintObject(elements: elements, name: name)
                 prettyPrinted += "let \(name): \(name.capitalized)Model\n"
             default:
                 prettyPrinted += property.description + "\n"
