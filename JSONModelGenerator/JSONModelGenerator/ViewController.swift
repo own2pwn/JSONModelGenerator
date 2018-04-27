@@ -37,6 +37,16 @@ extension ElementType: CustomStringConvertible {
         }
     }
 
+    public var isBaseType: Bool {
+        switch self {
+        case .int, .double, .string, .arrayType:
+            return true
+
+        default:
+            return false
+        }
+    }
+
     public var name: String {
         switch self {
         case .object(let name, _):
@@ -208,12 +218,22 @@ public final class WorkerBox {
                 // models.append(ModelType(name: name, properties: elements))
                 models += prettyPrintObject(elements: elements, name: name)
                 prettyPrinted += "let \(name): \(name.capitalized)Model\n"
+                traverseObject(property)
             default:
                 prettyPrinted += property.description + "\n"
             }
         }
 
         return prettyPrinted
+    }
+
+    private func traverseObject(_ object: ElementType) {
+        var result: [ModelType] = []
+
+        for element in object.elements {
+        }
+
+        return //result[0]
     }
 
     private func prettyPrintObject(elements: [ElementType], name: String) -> [ModelType] {
