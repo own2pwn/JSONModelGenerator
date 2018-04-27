@@ -30,7 +30,10 @@ extension ElementType: CustomStringConvertible {
     
     public var name: String {
         switch self {
-        case .object(let name, _):
+        case .any(let name), .array(let name, _),
+             .arrayType(let name, _), .double(let name),
+             .emptyArray(let name), .int(let name), .null(let name),
+             .object(let name, _), .string(let name):
             return name
         default:
             return "no name"
@@ -39,10 +42,7 @@ extension ElementType: CustomStringConvertible {
     
     public var elements: [ElementType] {
         switch self {
-        case .object(_, let elements):
-            return elements
-            
-        case .array(_, let elements):
+        case .object(_, let elements), .array(_, let elements):
             return elements
             
         default:
@@ -112,7 +112,7 @@ extension ElementType: CustomStringConvertible {
             return prettyPrint(name: name, for: self)
             
         case .array(let name, _):
-            return "WHAT THE FUCK MAN" // prettyPrint(name: name, for: self)
+            return "WHAT THE FUCK MAN [\(name)]" // prettyPrint(name: name, for: self)
             
         case .object(let name, let elements):
             return makeModel(name, of: elements)

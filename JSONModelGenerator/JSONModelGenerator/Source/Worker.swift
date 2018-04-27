@@ -15,7 +15,7 @@ public struct Property {
 
 public struct ModelType {
     let name: String
-    let properties: [ElementType]
+    let properties: [Property]
 }
 
 public final class Worker {
@@ -60,21 +60,8 @@ public final class Worker {
                 let traversed = prettyPrintObject(elements: element.elements, name: element.name)
                 result += traversed
             } else {
-                result.append(ModelType(name: name, properties: elements))
-            }
-        }
-        
-        return result
-    }
-    
-    private func traverse(models: [ModelType]) -> [ModelType] {
-        var result: [ModelType] = []
-        
-        for model in models {
-            for property in model.properties {
-                if property.isObject {
-                    result.append(ModelType(name: model.name, properties: property.elements))
-                }
+                let properties = elements.map { Property(name: $0.name, type: $0) }
+                result.append(ModelType(name: name, properties: properties))
             }
         }
         
