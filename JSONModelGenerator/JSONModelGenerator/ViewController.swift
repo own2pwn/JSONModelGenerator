@@ -20,10 +20,12 @@ public enum ElementType {
     case any(name: String)
     case null(name: String)
 
-    indirect
-    case array(name: String, elementType: ElementType)
+    case array(name: String, elements: [ElementType])
     case object(name: String, elements: [ElementType])
-    case arrayType(name: String)
+
+    indirect
+    case arrayType(name: String, elementType: ElementType)
+    case emptyArray(name: String)
 }
 
 extension ElementType: CustomStringConvertible {
@@ -88,8 +90,10 @@ extension ElementType: CustomStringConvertible {
         case .object:
             return ""
 
-        case .arrayType:
+        case .emptyArray:
             return "[Any]"
+        case .arrayType(_, let elementType):
+            return "[\(elementType)]"
         }
     }
 
@@ -119,8 +123,11 @@ extension ElementType: CustomStringConvertible {
         case .object(let name, let elements):
             return makeModel(name, of: elements)
 
-        case .arrayType(let name):
+        case .emptyArray(let name):
             return prettyPrint(name: name, for: self)
+
+        case .arrayType(let name, let elementType):
+            return prettyPrint(name: name, for: elementType)
         }
     }
 
@@ -291,17 +298,17 @@ public final class WorkerBox {
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
 
-            return .object(name: name, elements: parsed)
+            return ElementType.array(name: name, elements: parsed)
         }
         if element is String {
-            return .array(name: name, elementType: .stringType)
+            return .arrayType(name: name, elementType: .stringType)
         }
 
         return parse(element: element, name: name)
     }
 
     private func makeEmptyArray(for name: String) -> ElementType {
-        return .arrayType(name: name)
+        return .emptyArray(name: name)
     }
 
     private func makeString(for name: String) -> ElementType {
@@ -487,6 +494,14 @@ struct SearchModel {
             let html_attributions: [String]
             let width: Int
         }
+
+        /*
+         for type in element.types {
+            if type.isObject {
+                /
+            }
+         }
+        */
 
         let scope: String
         let vicinity: String
