@@ -50,17 +50,6 @@ extension ElementType: CustomStringConvertible {
         }
     }
     
-    private func prettyPrint(name: String, for type: ElementType) -> String {
-        let prettyName = name.prettyPrintedProperty
-        var pretty = "let \(prettyName): \(type.typeName)"
-        
-        if name != prettyName {
-            pretty += " // EPParser:map:\(name)"
-        }
-        
-        return pretty
-    }
-    
     public var typeName: String {
         switch self {
         case .string, .stringType:
@@ -111,8 +100,9 @@ extension ElementType: CustomStringConvertible {
         case .null(let name):
             return prettyPrint(name: name, for: self)
             
-        case .array(let name, _):
-            return "WHAT THE FUCK MAN [\(name)]" // prettyPrint(name: name, for: self)
+        case .array(let name, let type):
+            // "WHAT THE FUCK MAN [\(name)]"
+            return prettyPrint(name: name, for: self)
             
         case .object(let name, let elements):
             return makeModel(name, of: elements)
@@ -123,6 +113,17 @@ extension ElementType: CustomStringConvertible {
         case .arrayType(let name, let elementType):
             return prettyPrint(name: name, for: self)
         }
+    }
+    
+    private func prettyPrint(name: String, for type: ElementType) -> String {
+        let prettyName = name.prettyPrintedProperty
+        var pretty = "let \(prettyName): \(type.typeName)"
+        
+        if name != prettyName {
+            pretty += " // EPParser:map:\(name)"
+        }
+        
+        return pretty
     }
     
     private func makeModel(_ name: String, of elements: [ElementType]) -> String {

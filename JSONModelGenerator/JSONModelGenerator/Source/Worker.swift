@@ -35,6 +35,7 @@ public final class Worker {
         var models: [ModelType] = []
         
         for property in parsed {
+            break
             switch property {
             case .array(let name, let elements):
                 // models.append(ModelType(name: name, properties: elements))
