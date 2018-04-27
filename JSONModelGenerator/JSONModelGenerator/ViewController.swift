@@ -27,40 +27,79 @@ public enum ElementType {
 }
 
 extension ElementType: CustomStringConvertible {
+    private func prettyPrint(name: String, for type: ElementType) -> String {
+        let prettyName = name.prettyPrintedProperty
+        var pretty = "let \(prettyName): \(type.typeName)"
+        
+        if name != prettyName {
+            pretty += " // EPParser:map:\(name)"
+        }
+
+        return pretty
+    }
+
+    public var typeName: String {
+        switch self {
+        case .string, .stringType:
+            return "String"
+
+        case .int:
+            return "Int"
+
+        case .double:
+            return "Double"
+
+        case .any:
+            return "Any"
+
+        case .null:
+            return "Any?"
+
+        case .array(_, let type):
+            return "[\(type)]"
+
+        case .object:
+            return ""
+
+        case .arrayType:
+            return "[Any]"
+        }
+    }
+
     public var description: String {
         switch self {
         case .string(let name):
-            return "let \(name): String"
+            return prettyPrint(name: name, for: self)
 
-        case .arrayType(let name):
-            return "let \(name): [Any]"
-
-        case .array(let name, let type):
-            return "let \(name): [\(type)]"
+        case .stringType:
+            return "String"
 
         case .int(let name):
-            return "let \(name): Int"
+            return prettyPrint(name: name, for: self)
 
         case .double(let name):
-            return "let \(name): Double"
+            return prettyPrint(name: name, for: self)
+
+        case .any(let name):
+            return prettyPrint(name: name, for: self)
+
+        case .null(let name):
+            return prettyPrint(name: name, for: self)
+
+        case .array(let name, _):
+            return prettyPrint(name: name, for: self)
 
         case .object(let name, let elements):
             return makeModel(name, of: elements)
 
-        case .any(let name):
-            return "let \(name): Any"
-
-        case .null(let name):
-            return "let \(name): Any?"
-
-        case .stringType:
-            return "String"
+        case .arrayType(let name):
+            return prettyPrint(name: name, for: self)
         }
     }
 
     private func makeModel(_ name: String, of elements: [ElementType]) -> String {
         let spacing = String(repeating: Character.space, count: 4)
-        let header = "struct \(name.capitalized)Model {\n"
+        let header = "struct \(name.prettyPrintedProperty)Model {\n"
 
         let content = elements
             .map { spacing + $0.description }
@@ -78,6 +117,19 @@ extension ElementType: CustomStringConvertible {
             .joined(separator: "\n")
 
         return content
+    }
+}
+
+private extension String {
+    var prettyPrintedProperty: String {
+        let splitted = components(separatedBy: "_")
+        guard splitted.count > 1 else {
+            return self
+        }
+        let pretty = splitted[1..<splitted.count].map { $0.capitalized }
+        let full = [splitted[0]] + pretty
+
+        return full.joined()
     }
 }
 
