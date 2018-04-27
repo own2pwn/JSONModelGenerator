@@ -21,16 +21,34 @@ public enum ElementType {
     case null(name: String)
 
     indirect
-    case array(name: String, elements: ElementType)
+    case array(name: String, elementType: ElementType)
     case object(name: String, elements: [ElementType])
     case arrayType(name: String)
 }
 
 extension ElementType: CustomStringConvertible {
+    public var isObject: Bool {
+        switch self {
+        case .object:
+            return true
+        default:
+            return false
+        }
+    }
+
+    public var elements: [ElementType] {
+        switch self {
+        case .object(_, let elements):
+            return elements
+        default:
+            return [ElementType]()
+        }
+    }
+
     private func prettyPrint(name: String, for type: ElementType) -> String {
         let prettyName = name.prettyPrintedProperty
         var pretty = "let \(prettyName): \(type.typeName)"
-        
+
         if name != prettyName {
             pretty += " // EPParser:map:\(name)"
         }
@@ -174,11 +192,23 @@ public final class WorkerBox {
                 prettyPrinted += property.description + "\n"
             }
         }
+        traverse(models: models)
 
         return prettyPrinted
     }
 
-    private func traverse(object: ElementType) {
+    private func traverse(models: [ModelType]) -> [ModelType] {
+        var result: [ModelType] = []
+
+        for model in models {
+            for property in model.properties {
+                if property.isObject {
+                    result.append(ModelType(name: model.name, properties: property.elements))
+                }
+            }
+        }
+
+        return result
     }
 
     public func parse(_ object: JSONObject) -> [ElementType] {
@@ -240,7 +270,7 @@ public final class WorkerBox {
             return .object(name: name, elements: parsed)
         }
         if element is String {
-            return .array(name: name, elements: .stringType)
+            return .array(name: name, elementType: .stringType)
         }
 
         return parse(element: element, name: name)
