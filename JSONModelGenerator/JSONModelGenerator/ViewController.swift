@@ -36,6 +36,15 @@ extension ElementType: CustomStringConvertible {
         }
     }
 
+    public var name: String {
+        switch self {
+        case .object(let name, _):
+            return name
+        default:
+            return "no name"
+        }
+    }
+
     public var elements: [ElementType] {
         switch self {
         case .object(_, let elements):
@@ -117,7 +126,7 @@ extension ElementType: CustomStringConvertible {
 
     private func makeModel(_ name: String, of elements: [ElementType]) -> String {
         let spacing = String(repeating: Character.space, count: 4)
-        let header = "struct \(name.prettyPrintedProperty)Model {\n"
+        let header = "struct \(name.prettyPrintedProperty.capitalized)Model {\n"
 
         let content = elements
             .map { spacing + $0.description }
@@ -186,15 +195,30 @@ public final class WorkerBox {
         for property in parsed {
             switch property {
             case .object(let name, let elements):
-                models.append(ModelType(name: name, properties: elements))
+                // models.append(ModelType(name: name, properties: elements))
+                models += prettyPrintObject(elements: elements, name: name)
                 prettyPrinted += "let \(name): \(name.capitalized)Model\n"
             default:
                 prettyPrinted += property.description + "\n"
             }
         }
-        traverse(models: models)
 
         return prettyPrinted
+    }
+
+    private func prettyPrintObject(elements: [ElementType], name: String) -> [ModelType] {
+        var result: [ModelType] = []
+
+        for element in elements {
+            if element.isObject {
+                let traversed = prettyPrintObject(elements: element.elements, name: element.name)
+                result += traversed
+            } else {
+                result.append(ModelType(name: name, properties: elements))
+            }
+        }
+
+        return result
     }
 
     private func traverse(models: [ModelType]) -> [ModelType] {
