@@ -13,6 +13,12 @@ public struct Property {
     let type: ElementType
 }
 
+extension Property: CustomStringConvertible {
+    public var description: String {
+        return "let \(name): \(type.typeName)"
+    }
+}
+
 public struct ModelType {
     let name: String
     let properties: [Property]
