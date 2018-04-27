@@ -200,13 +200,13 @@ public final class WorkerBox {
         let parsed = parse(object)
 
         var prettyPrinted = ""
-        var models: [String: [ModelType]] = [:]
+        var models: [ModelType] = []
 
         for property in parsed {
             switch property {
             case .array(let name, let elements):
                 // models.append(ModelType(name: name, properties: elements))
-                models[name] = prettyPrintObject(elements: elements, name: name)
+                models += prettyPrintObject(elements: elements, name: name)
                 prettyPrinted += "let \(name): \(name.capitalized)Model\n"
             default:
                 prettyPrinted += property.description + "\n"
