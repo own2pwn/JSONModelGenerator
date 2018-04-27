@@ -50,6 +50,10 @@ extension ElementType: CustomStringConvertible {
         switch self {
         case .object(_, let elements):
             return elements
+
+        case .array(_, let elements):
+            return elements
+
         default:
             return [ElementType]()
         }
