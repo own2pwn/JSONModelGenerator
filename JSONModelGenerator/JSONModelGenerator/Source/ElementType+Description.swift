@@ -155,7 +155,9 @@ private extension String {
         guard splitted.count > 1 else {
             return self
         }
-        let pretty = splitted[1..<splitted.count].map { $0.capitalized }
+        
+        let replaced = splitted[1..<splitted.count].map { $0.replacingOccurrences(of: "id", with: "ID") }
+        let pretty = replaced.map { $0.capitalized }
         let full = [splitted[0]] + pretty
         
         return full.joined()

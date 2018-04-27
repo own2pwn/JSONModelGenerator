@@ -28,11 +28,59 @@ public final class Worker {
 
     // MARK: - Interface
     
+    // TODO: replace id with ID,
+    // if model is array and ends with `s` then remove `s`
+    
     public func generate(for object: JSONObject) -> String {
         let parsed = parse(object)
         
         var prettyPrinted = ""
         var models: [ModelType] = []
+        
+        var strValue = ""
+        var nModels: [String: String] = [:]
+        
+        for property in parsed {
+            if property.isBaseType {
+                strValue += property.description + "\n"
+            } else {
+                let name = property.name
+                let arrayPart = property.isObject ? "\(name.capitalized)Model\n" : "[\(name.capitalized)Model]\n"
+                strValue += "let \(name): \(arrayPart)"
+                
+                var nValue = ""
+                
+                for inner in property.elements {
+                    // начинаем строить NameModel
+                    if inner.isBaseType {
+                        nValue += inner.description + "\n"
+                    } else {
+                        let innerName = inner.name
+                        let innerArrayPart = inner.isObject ? "\(innerName.capitalized)Model\n" : "[\(innerName.capitalized)Model]\n"
+                        nValue += "let \(innerName): \(innerArrayPart)"
+                        
+                        // PhotoModel
+                        
+                        var nValue2 = ""
+                        
+                        for inner2 in inner.elements {
+                            // building PhotoModel
+                            if inner2.isBaseType {
+                                nValue2 += inner2.description + "\n"
+                            } else {
+                                let innerName2 = inner2.name
+                                let innerArrayPart2 = inner2.isObject ? "\(innerName2.capitalized)Model\n" : "[\(innerName2.capitalized)Model]\n"
+                                nValue2 += "let \(innerName2): \(innerArrayPart2)"
+                            }
+                        }
+                        
+                        nModels[innerName] = nValue2
+                    }
+                }
+                
+                nModels[name] = nValue
+            }
+        }
         
         for property in parsed {
             break
