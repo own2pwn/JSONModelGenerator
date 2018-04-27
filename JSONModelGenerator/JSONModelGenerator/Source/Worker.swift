@@ -18,7 +18,7 @@ public struct ModelType {
     let properties: [ElementType]
 }
 
-public final class WorkerBox {
+public final class Worker {
 
     // MARK: - Interface
     
