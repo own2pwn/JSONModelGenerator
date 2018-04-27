@@ -23,8 +23,7 @@ public enum ElementType {
     case array(name: String, elements: [ElementType])
     case object(name: String, elements: [ElementType])
 
-    indirect
-    case arrayType(name: String, elementType: ElementType)
+    case arrayType(name: String, elementType: String)
     case emptyArray(name: String)
 }
 
@@ -127,7 +126,7 @@ extension ElementType: CustomStringConvertible {
             return prettyPrint(name: name, for: self)
 
         case .arrayType(let name, let elementType):
-            return prettyPrint(name: name, for: elementType)
+            return prettyPrint(name: name, for: self)
         }
     }
 
@@ -301,7 +300,7 @@ public final class WorkerBox {
             return ElementType.array(name: name, elements: parsed)
         }
         if element is String {
-            return .arrayType(name: name, elementType: .stringType)
+            return .arrayType(name: name, elementType: ElementType.stringType.description)
         }
 
         return parse(element: element, name: name)
