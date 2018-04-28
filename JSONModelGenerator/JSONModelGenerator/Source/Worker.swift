@@ -36,127 +36,55 @@ public final class Worker {
 
     // MARK: - Interface
     
-    // TODO: replace id with ID,
-    // if model is array and ends with `s` then remove `s`
+    // TODO: if model is array and ends with `s` then remove `s`
     
-    private func doKek(_ element: ElementType) -> [String: String] {
-        // --- нужно вернуть let results: ResultsModel
-        // нужно вернуть models, models[result] = resultsModel
-        
+    private func traverseStruct(_ element: ElementType) -> [String: String] {
         var models: [String: String] = [:]
-        
         var result = ""
+        let spacing = String(repeating: Character.space, count: 4)
         
         for property in element.elements {
             if property.isBaseType {
-                result += property.description + "\n"
+                result += spacing + property.description + "\n"
             } else {
                 let name = property.name
                 let arrayPart = property.isObject ? "\(name.capitalized)Model" : "[\(name.capitalized)Model]"
-                result += "let \(name): \(arrayPart)\n"
+                result += spacing + "let \(name): \(arrayPart)\n"
                 
-                let recursive = doKek(property)
+                let recursive = traverseStruct(property)
                 models += recursive
             }
         }
-        
         models[element.name] = result
         
         return models
     }
     
-    public func generate(for object: JSONObject) -> String {
+    public func generate(name: String, for object: JSONObject) -> String {
         let parsed = parse(object)
+        let modelName = name.capitalized + "Model"
         
-        var prettyPrinted = ""
-        var models: [ModelType] = []
+        let baseKey = "container"
+        let container = ElementType.object(name: baseKey, elements: parsed)
+        var elements = traverseStruct(container)
+        let baseModel = elements[baseKey]!
         
-        var strValue = ""
-        var nModels: [String: String] = [:]
+        var prettyPrinted = makeBaseModel(name: modelName, baseModel)
+        elements[baseKey] = nil
         
-        let r = doKek(parsed[1])
-        
-        for property in parsed {
-            if property.isBaseType {
-                strValue += property.description + "\n"
-            } else {
-                let name = property.name
-                let arrayPart = property.isObject ? "\(name.capitalized)Model\n" : "[\(name.capitalized)Model]\n"
-                strValue += "let \(name): \(arrayPart)"
-                
-                var nValue = ""
-                
-                for inner in property.elements {
-                    // начинаем строить NameModel
-                    if inner.isBaseType {
-                        nValue += inner.description + "\n"
-                    } else {
-                        let innerName = inner.name
-                        let innerArrayPart = inner.isObject ? "\(innerName.capitalized)Model\n" : "[\(innerName.capitalized)Model]\n"
-                        nValue += "let \(innerName): \(innerArrayPart)"
-                        
-                        // PhotoModel
-                        
-                        var nValue2 = ""
-                        
-                        for inner2 in inner.elements {
-                            // building PhotoModel
-                            if inner2.isBaseType {
-                                nValue2 += inner2.description + "\n"
-                            } else {
-                                let innerName2 = inner2.name
-                                let innerArrayPart2 = inner2.isObject ? "\(innerName2.capitalized)Model\n" : "[\(innerName2.capitalized)Model]\n"
-                                nValue2 += "let \(innerName2): \(innerArrayPart2)"
-                            }
-                        }
-                        
-                        nModels[innerName] = nValue2
-                    }
-                }
-                
-                nModels[name] = nValue
-            }
-        }
-        
-        for property in parsed {
-            break
-            switch property {
-            case .array(let name, let elements):
-                // models.append(ModelType(name: name, properties: elements))
-                models += prettyPrintObject(elements: elements, name: name)
-                prettyPrinted += "let \(name): \(name.capitalized)Model\n"
-                traverseObject(property)
-            default:
-                prettyPrinted += property.description + "\n"
-            }
+        for (k, v) in elements {
+            let propertyModel = k.capitalized + "Model"
+            prettyPrinted += makeBaseModel(name: propertyModel, v)
         }
         
         return prettyPrinted
     }
     
-    private func traverseObject(_ object: ElementType) {
-        var result: [ModelType] = []
+    private func makeBaseModel(name: String, _ properties: String) -> String {
+        let header = "struct \(name) {\n"
+        let footer = "}\n"
         
-        for element in object.elements {
-        }
-        
-        return // result[0]
-    }
-    
-    private func prettyPrintObject(elements: [ElementType], name: String) -> [ModelType] {
-        var result: [ModelType] = []
-        
-        for element in elements {
-            if element.isObject {
-                let traversed = prettyPrintObject(elements: element.elements, name: element.name)
-                result += traversed
-            } else {
-                let properties = elements.map { Property(name: $0.name, type: $0) }
-                result.append(ModelType(name: name, properties: properties))
-            }
-        }
-        
-        return result
+        return header + properties + footer
     }
     
     public func parse(_ object: JSONObject) -> [ElementType] {
