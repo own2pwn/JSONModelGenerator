@@ -55,10 +55,10 @@ extension ElementType: CustomStringConvertible {
         case .string, .stringType:
             return "String"
             
-        case .int:
+        case .int, .intType:
             return "Int"
             
-        case .double:
+        case .double, .doubleType:
             return "Double"
             
         case .any:
@@ -91,8 +91,14 @@ extension ElementType: CustomStringConvertible {
         case .int(let name):
             return prettyPrint(name: name, for: self)
             
+        case .intType:
+            return "Int"
+            
         case .double(let name):
             return prettyPrint(name: name, for: self)
+            
+        case .doubleType:
+            return "Double"
             
         case .any(let name):
             return prettyPrint(name: name, for: self)
@@ -100,8 +106,7 @@ extension ElementType: CustomStringConvertible {
         case .null(let name):
             return prettyPrint(name: name, for: self)
             
-        case .array(let name, let type):
-            // "WHAT THE FUCK MAN [\(name)]"
+        case .array(let name, _):
             return prettyPrint(name: name, for: self)
             
         case .object(let name, let elements):
@@ -110,7 +115,7 @@ extension ElementType: CustomStringConvertible {
         case .emptyArray(let name):
             return prettyPrint(name: name, for: self)
             
-        case .arrayType(let name, let elementType):
+        case .arrayType(let name, _):
             return prettyPrint(name: name, for: self)
         }
     }

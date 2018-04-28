@@ -38,6 +38,48 @@ public final class Worker {
     
     // TODO: if model is array and ends with `s` then remove `s`
     
+    public func generate(name: String, for object: JSONObject) -> String {
+        let parsed = parse(object)
+        let modelName = name.capitalized + "Model"
+        
+        let baseKey = "container"
+        let container = ElementType.object(name: baseKey, elements: parsed)
+        var elements = traverseStruct(container)
+        let baseModel = elements[baseKey]!
+        
+        var prettyPrinted = makeBaseModel(name: modelName, baseModel)
+        elements[baseKey] = nil
+        
+        for (k, v) in elements {
+            let propertyModel = k.capitalized + "Model"
+            prettyPrinted += makeBaseModel(name: propertyModel, v)
+        }
+        
+        return prettyPrinted
+    }
+    
+    // MARK: - Internal
+    
+    private func parse(_ object: JSONObject) -> [ElementType] {
+        var properties: [ElementType] = []
+        
+        for key in object.keys {
+            let element = object[key]!
+            
+            let property = parse(element: element, name: key)
+            properties.append(property)
+        }
+        
+        return properties
+    }
+    
+    private func makeBaseModel(name: String, _ properties: String) -> String {
+        let header = "struct \(name) {\n"
+        let footer = "}\n\n"
+        
+        return header + properties + footer
+    }
+    
     private func traverseStruct(_ element: ElementType) -> [String: String] {
         var models: [String: String] = [:]
         var result = ""
@@ -60,53 +102,7 @@ public final class Worker {
         return models
     }
     
-    public func generate(name: String, for object: JSONObject) -> String {
-        let parsed = parse(object)
-        let modelName = name.capitalized + "Model"
-        
-        let baseKey = "container"
-        let container = ElementType.object(name: baseKey, elements: parsed)
-        var elements = traverseStruct(container)
-        let baseModel = elements[baseKey]!
-        
-        var prettyPrinted = makeBaseModel(name: modelName, baseModel)
-        elements[baseKey] = nil
-        
-        for (k, v) in elements {
-            let propertyModel = k.capitalized + "Model"
-            prettyPrinted += makeBaseModel(name: propertyModel, v)
-        }
-        
-        return prettyPrinted
-    }
-    
-    private func makeBaseModel(name: String, _ properties: String) -> String {
-        let header = "struct \(name) {\n"
-        let footer = "}\n\n"
-        
-        return header + properties + footer
-    }
-    
-    public func parse(_ object: JSONObject) -> [ElementType] {
-        var properties: [ElementType] = []
-        
-        for key in object.keys {
-            let element = object[key]!
-            
-            let property = parse(element: element, name: key)
-            properties.append(property)
-        }
-        
-        return properties
-    }
-    
-    // MARK: - Internal
-    
     private func parse(element: Any, name: String) -> ElementType {
-        if element is String {
-            return makeString(for: name)
-        }
-        
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
             
@@ -115,6 +111,10 @@ public final class Worker {
         
         if element is [Any] {
             return makeArray(element as! [Any], for: name)
+        }
+        
+        if element is String {
+            return makeString(for: name)
         }
         
         if element is Int {
@@ -143,10 +143,19 @@ public final class Worker {
         if element is JSONObject {
             let parsed = parse(element as! JSONObject)
             
-            return ElementType.array(name: name, elements: parsed)
+            return .array(name: name, elements: parsed)
         }
+        
         if element is String {
             return .arrayType(name: name, elementType: ElementType.stringType.description)
+        }
+        
+        if element is Int {
+            return .arrayType(name: name, elementType: ElementType.intType.description)
+        }
+        
+        if element is Double {
+            return .arrayType(name: name, elementType: ElementType.doubleType.description)
         }
         
         return parse(element: element, name: name)

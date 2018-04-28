@@ -15,7 +15,10 @@ public enum ElementType {
     case stringType
     
     case int(name: String)
+    case intType
+    
     case double(name: String)
+    case doubleType
     
     case any(name: String)
     case null(name: String)
