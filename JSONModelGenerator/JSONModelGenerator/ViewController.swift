@@ -23,6 +23,7 @@ final class ViewController: NSViewController {
             let json = object as? JSONObject else { return }
 
         let worker = Worker()
-        _ = worker.generate(name: "Search", for: json)
+        let model = worker.generate(name: "Search", for: json)
+        log.debug("\n\(model)")
     }
 }
