@@ -82,7 +82,7 @@ public final class Worker {
     
     private func makeBaseModel(name: String, _ properties: String) -> String {
         let header = "struct \(name) {\n"
-        let footer = "}\n"
+        let footer = "}\n\n"
         
         return header + properties + footer
     }
