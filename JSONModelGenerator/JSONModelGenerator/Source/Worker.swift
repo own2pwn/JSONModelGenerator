@@ -24,12 +24,46 @@ public struct ModelType {
     let properties: [Property]
 }
 
+public extension Dictionary {
+    public static func +=(_ lhs: inout Dictionary<Key, Value>, _ rhs: Dictionary<Key, Value>) {
+        for (k, v) in rhs {
+            lhs[k] = v
+        }
+    }
+}
+
 public final class Worker {
 
     // MARK: - Interface
     
     // TODO: replace id with ID,
     // if model is array and ends with `s` then remove `s`
+    
+    private func doKek(_ element: ElementType) -> [String: String] {
+        // --- нужно вернуть let results: ResultsModel
+        // нужно вернуть models, models[result] = resultsModel
+        
+        var models: [String: String] = [:]
+        
+        var result = ""
+        
+        for property in element.elements {
+            if property.isBaseType {
+                result += property.description + "\n"
+            } else {
+                let name = property.name
+                let arrayPart = property.isObject ? "\(name.capitalized)Model" : "[\(name.capitalized)Model]"
+                result += "let \(name): \(arrayPart)\n"
+                
+                let recursive = doKek(property)
+                models += recursive
+            }
+        }
+        
+        models[element.name] = result
+        
+        return models
+    }
     
     public func generate(for object: JSONObject) -> String {
         let parsed = parse(object)
@@ -39,6 +73,8 @@ public final class Worker {
         
         var strValue = ""
         var nModels: [String: String] = [:]
+        
+        let r = doKek(parsed[1])
         
         for property in parsed {
             if property.isBaseType {

@@ -156,8 +156,8 @@ private extension String {
             return self
         }
         
-        let replaced = splitted[1..<splitted.count].map { $0.replacingOccurrences(of: "id", with: "ID") }
-        let pretty = replaced.map { $0.capitalized }
+        let capitalized = splitted[1..<splitted.count].map { $0.capitalized }
+        let pretty = capitalized.map { $0.replacingOccurrences(of: "Id", with: "ID") }
         let full = [splitted[0]] + pretty
         
         return full.joined()
