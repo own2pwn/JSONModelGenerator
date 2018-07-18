@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B991948F20FFE31E004F0C5A /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = B991948E20FFE31E004F0C5A /* sample.json */; };
+		B991949120FFE513004F0C5A /* Model.json in Resources */ = {isa = PBXBuildFile; fileRef = B9B55F7E20927C950016216E /* Model.json */; };
 		B99BECD62093901E003F8AE3 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99BECD52093901E003F8AE3 /* ElementType.swift */; };
 		B99BECD820939045003F8AE3 /* ElementType+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99BECD720939045003F8AE3 /* ElementType+Description.swift */; };
 		B99BECDB20939063003F8AE3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99BECDA20939063003F8AE3 /* String+Extension.swift */; };
@@ -16,70 +18,11 @@
 		B9B55F7320927C8A0016216E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B55F7220927C8A0016216E /* Assets.xcassets */; };
 		B9B55F7620927C8A0016216E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B55F7420927C8A0016216E /* Main.storyboard */; };
 		B9B55FAA20927D1C0016216E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B55FA920927D1C0016216E /* Logger.swift */; };
-		B9B55FBD20927D490016216E /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B55FBC20927D430016216E /* SwiftyBeaver.framework */; };
-		B9B55FBE20927D490016216E /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9B55FBC20927D430016216E /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B9B55FB320927D430016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9EDCE3E41C09D211002FA4A7;
-			remoteInfo = "SwiftyBeaver (iOS)";
-		};
-		B9B55FB520927D430016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9EDCE3EE1C09D211002FA4A7;
-			remoteInfo = SwiftyBeaverTests;
-		};
-		B9B55FB720927D430016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ACE597841C1882DF0031451F;
-			remoteInfo = "SwiftyBeaver (watchOS)";
-		};
-		B9B55FB920927D430016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ACE597951C18830D0031451F;
-			remoteInfo = "SwiftyBeaver (tvOS)";
-		};
-		B9B55FBB20927D430016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ACE597A61C18832E0031451F;
-			remoteInfo = "SwiftyBeaver (macOS)";
-		};
-		B9B55FBF20927D490016216E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ACE597971C18832E0031451F;
-			remoteInfo = "SwiftyBeaver (macOS)";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B9B55FA820927CF90016216E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B9B55FBE20927D490016216E /* SwiftyBeaver.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		B991948A20FFE28B004F0C5A /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		B991948E20FFE31E004F0C5A /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		B99BECD52093901E003F8AE3 /* ElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 		B99BECD720939045003F8AE3 /* ElementType+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ElementType+Description.swift"; sourceTree = "<group>"; };
 		B99BECDA20939063003F8AE3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -93,7 +36,6 @@
 		B9B55F7820927C8A0016216E /* JSONModelGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSONModelGenerator.entitlements; sourceTree = "<group>"; };
 		B9B55F7E20927C950016216E /* Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Model.json; sourceTree = "<group>"; };
 		B9B55FA920927D1C0016216E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyBeaver.xcodeproj; path = ../../../../../../../Mobile/iOS/Swift/Lib/SwiftyBeaver/SwiftyBeaver.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B55FBD20927D490016216E /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B991948820FFE21B004F0C5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B991948E20FFE31E004F0C5A /* sample.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B991948920FFE28A004F0C5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B991948A20FFE28B004F0C5A /* SwiftyBeaver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B99BECCE20939004003F8AE3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +89,7 @@
 			children = (
 				B9B55F6D20927C8A0016216E /* JSONModelGenerator */,
 				B9B55F6C20927C8A0016216E /* Products */,
+				B991948920FFE28A004F0C5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,9 +104,9 @@
 		B9B55F6D20927C8A0016216E /* JSONModelGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				B991948820FFE21B004F0C5A /* Model */,
 				B99BECCE20939004003F8AE3 /* Source */,
 				B9B55FA920927D1C0016216E /* Logger.swift */,
-				B9B55F9120927CE70016216E /* lib */,
 				B9B55F7E20927C950016216E /* Model.json */,
 				B9B55F6E20927C8A0016216E /* AppDelegate.swift */,
 				B9B55F7020927C8A0016216E /* ViewController.swift */,
@@ -158,26 +116,6 @@
 				B9B55F7820927C8A0016216E /* JSONModelGenerator.entitlements */,
 			);
 			path = JSONModelGenerator;
-			sourceTree = "<group>";
-		};
-		B9B55F9120927CE70016216E /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		B9B55FAC20927D430016216E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B9B55FB420927D430016216E /* SwiftyBeaver.framework */,
-				B9B55FB620927D430016216E /* SwiftyBeaverTests.xctest */,
-				B9B55FB820927D430016216E /* SwiftyBeaver.framework */,
-				B9B55FBA20927D430016216E /* SwiftyBeaver.framework */,
-				B9B55FBC20927D430016216E /* SwiftyBeaver.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,12 +128,11 @@
 				B9B55F6720927C8A0016216E /* Sources */,
 				B9B55F6820927C8A0016216E /* Frameworks */,
 				B9B55F6920927C8A0016216E /* Resources */,
-				B9B55FA820927CF90016216E /* Embed Frameworks */,
+				B991949020FFE472004F0C5A /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B9B55FC020927D490016216E /* PBXTargetDependency */,
 			);
 			name = JSONModelGenerator;
 			productName = JSONModelGenerator;
@@ -209,7 +146,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Evgeniy;
 				TargetAttributes = {
 					B9B55F6A20927C8A0016216E = {
@@ -229,12 +166,6 @@
 			mainGroup = B9B55F6220927C8A0016216E;
 			productRefGroup = B9B55F6C20927C8A0016216E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B9B55FAC20927D430016216E /* Products */;
-					ProjectRef = B9B55FAB20927D430016216E /* SwiftyBeaver.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B9B55F6A20927C8A0016216E /* JSONModelGenerator */,
@@ -242,55 +173,38 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		B9B55FB420927D430016216E /* SwiftyBeaver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyBeaver.framework;
-			remoteRef = B9B55FB320927D430016216E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B9B55FB620927D430016216E /* SwiftyBeaverTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftyBeaverTests.xctest;
-			remoteRef = B9B55FB520927D430016216E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B9B55FB820927D430016216E /* SwiftyBeaver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyBeaver.framework;
-			remoteRef = B9B55FB720927D430016216E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B9B55FBA20927D430016216E /* SwiftyBeaver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyBeaver.framework;
-			remoteRef = B9B55FB920927D430016216E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B9B55FBC20927D430016216E /* SwiftyBeaver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyBeaver.framework;
-			remoteRef = B9B55FBB20927D430016216E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		B9B55F6920927C8A0016216E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B991949120FFE513004F0C5A /* Model.json in Resources */,
 				B9B55F7320927C8A0016216E /* Assets.xcassets in Resources */,
 				B9B55F7620927C8A0016216E /* Main.storyboard in Resources */,
+				B991948F20FFE31E004F0C5A /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B991949020FFE472004F0C5A /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/Mac/SwiftyBeaver.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B55F6720927C8A0016216E /* Sources */ = {
@@ -308,14 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B9B55FC020927D490016216E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftyBeaver (macOS)";
-			targetProxy = B9B55FBF20927D490016216E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B9B55F7420927C8A0016216E /* Main.storyboard */ = {
@@ -343,6 +249,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -350,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -400,6 +308,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -407,6 +316,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -438,16 +348,18 @@
 		B9B55F7C20927C8A0016216E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JSONModelGenerator/JSONModelGenerator.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VD97XKT54M;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/Mac";
 				INFOPLIST_FILE = JSONModelGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = own2pwn.pp.JSONModelGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -455,16 +367,18 @@
 		B9B55F7D20927C8A0016216E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JSONModelGenerator/JSONModelGenerator.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VD97XKT54M;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/Mac";
 				INFOPLIST_FILE = JSONModelGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = own2pwn.pp.JSONModelGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
